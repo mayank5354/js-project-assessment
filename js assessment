@@ -1,0 +1,57 @@
+
+
+// Step 1: Create a variable to hold your NFTs
+let nfts = []; // Array to store NFT objects
+
+// Step 2: Create an object inside your mintNFT function that will hold the metadata for your NFTs.
+// This function will take in values as parameters, create an NFT object using the parameters 
+// passed to it for its metadata, and store it in the variable above.
+function mintNFT(name, eyeColor, shirtType, bling) {
+    // Create an NFT object with the provided metadata
+    const nft = {
+        name: name,
+        eyeColor: eyeColor,
+        shirtType: shirtType,
+        bling: bling
+    };
+    
+    // Store the NFT object in the nfts array
+    nfts.push(nft);
+
+    // Log a message indicating the NFT has been minted
+    console.log(`Minted NFT: ${name}`);
+}
+
+// Step 3: Create a function that will loop through the array of NFTs
+// and print their metadata with console.log().
+function listNFTs() {
+    // Loop through the nfts array
+    for (let i = 0; i < nfts.length; i++) {
+        // Print the metadata of each NFT
+        console.log(`NFT #${i + 1}`);
+        console.log(`Name: ${nfts[i].name}`);
+        console.log(`Eye Color: ${nfts[i].eyeColor}`);
+        console.log(`Shirt Type: ${nfts[i].shirtType}`);
+        console.log(`Bling: ${nfts[i].bling}`);
+        console.log('-----------------------'); // Separator for readability
+    }
+}
+
+// Step 4: Create a function that returns the total number of NFTs we have minted.
+function getTotalSupply() {
+    // Return the length of the nfts array, which represents the total supply
+    return nfts.length;
+}
+
+// Call your functions below this line to test the implementation
+
+// Mint a few NFTs with different metadata
+mintNFT("CryptoPunk #1", "Blue", "T-Shirt", "Gold Chain");
+mintNFT("CryptoPunk #2", "Green", "Hoodie", "Silver Ring");
+mintNFT("CryptoPunk #3", "Brown", "Jacket", "Diamond Earring");
+
+// List all NFTs and their metadata
+listNFTs();
+
+// Print the total number of NFTs minted
+console.log(`Total Supply: ${getTotalSupply()}`);
